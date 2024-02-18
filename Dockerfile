@@ -10,6 +10,9 @@ COPY . /gibor-app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Set permissions of the SQLite database file
+RUN chmod 644 database.db
+
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 
