@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Tweet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Add Tweet</h1>
+    <form action="/add_tweet" method="post">
+        <label for="tweet">Tweet:</label><br>
+        <input type="text" id="tweet" name="tweet"><br>
+        <input type="submit" value="Submit Tweet">
+    </form>
+</body>
+</html>

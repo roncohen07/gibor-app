@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Homepage</h1>
+    <h2>Add a Tweet</h2>
+    <form id="tweet-form" action="{{ url_for('add_tweet') }}" method="post">
+        <textarea id="tweet_text" name="tweet_text" rows="4" cols="50" required></textarea><br>
+        <button type="submit">Add Tweet</button>
+    </form>
+    <h2>Tweets</h2>
+    <ul>
+        {% for tweet in tweets %}
+            <li>{{ tweet.username }}: {{ tweet.tweet_text }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
